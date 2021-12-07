@@ -8,7 +8,7 @@ db.trips.aggregate(
             $divide: [{ $subtract: ["$stopTime", "$startTime"] }, 3600000],
           },
         },
-      }
+      },
     },
     {
       $project: {
@@ -17,5 +17,5 @@ db.trips.aggregate(
         duracaoMedia: { $round: ["$duracaoMedia", 2] },
       },
     },
-  ]
+  ],
 );
