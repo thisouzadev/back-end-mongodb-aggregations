@@ -1,16 +1,12 @@
 db.trips.aggregate(
   [
     {
-    $project: {
-      diaDaSemana: { $dayOfWeek: "$startTime" },
-      startStationName: 1,
+      $project: {
+        diaDaSemana: { $dayOfWeek: "$startTime" },
+        startStationName: 1,
+      },
     },
-  },
-  {
-    $match: {
-      diaDaSemana: 5,
-    },
-  },
+    { $match: { diaDaSemana: 5 } },
     {
       $group: {
         _id: "$startStationName",
