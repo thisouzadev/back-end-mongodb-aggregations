@@ -15,4 +15,5 @@ db.trips.aggregate(
         menorAnoNascimento: 1,
       },
     },
-  ]);
+  ]
+);
